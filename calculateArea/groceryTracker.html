@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rectangle Area Calculator</title>
+    <title>Grocery Tracker</title>
 </head>
+
 <body>
-      <h1>Rectangle Area Calculator</h1>
-  <label for="gro1">Enter the Grocery-1 Amount: </label>
-  <input type="number" id="gro1"><br><br>
-  <label for="gro2">Enter the Grocery-1 Amount: </label>
-  <input type="number" id="gro2"><br><br>
+    <h1>Grocery Tracker</h1>
+    <label for="gro1">Enter the Grocery-1 Amount: </label>
+    <input type="number" id="gro1"><br><br>
+    <label for="gro2">Enter the Grocery-1 Amount: </label>
+    <input type="number" id="gro2"><br><br>
     <label for="gro3">Enter the Grocery-1 Amount: </label>
-  <input type="number" id="gro3"><br><br>
-  <button id="btn" >Calculate Total Amount</button><br><br>
-  <p id="result"></p>
-<script>
-    let gro1 = document.getElementById("gro1");
-    let gro2 = document.getElementById("gro2");
-    let gro3 = document.getElementById("gro3");
-    console.log(gro1);
-    function groceryTracker(a,b,c){
-        a = parseFloat(a);
-        b = parseFloat(b);
-        c = parseFloat(c);
-        let sum = a + b + c;
+    <input type="number" id="gro3"><br><br>
+    <button id="btn">Calculate Total Amount</button><br><br>
+    <p id="result"></p>
+    <script>
+        let gro1 = document.getElementById("gro1");
+        let gro2 = document.getElementById("gro2");
+        let gro3 = document.getElementById("gro3");
         console.log(gro1);
-        document.getElementById("result").innerHtml = "The total amount is $" + sum ;
-    }
-    document.getElementById("btn").addEventListener("click" , () => {
-        groceryTracker(gro1.value, gro2.value , gro3.value)})
-</script>
+        function groceryTracker(a, b, c) {
+            a = parseFloat(a);
+            b = parseFloat(b);
+            c = parseFloat(c);
+            let sum = a + b + c;
+            document.getElementById("result").innerText = `The total amount is $ ${sum}`;
+        }
+
+        console.log(document.getElementById("btn"));
+        document.getElementById("btn").onclick = () => {
+            groceryTracker(gro1.value, gro2.value, gro3.value);
+        };
+    </script>
 </body>
+
 </html>
